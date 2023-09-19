@@ -1,12 +1,15 @@
-require('dotenv').config()
-const mongoose = require('mongoose')
-mongoose.set('strictQuery', false)
-mongoose.connect(process.env.mongoose_url, {
+require("dotenv").config();
+const mongoose = require("mongoose");
+mongoose.set("strictQuery", false);
+console.log("MY_URL check:::::::", process.env.MONGOOSE_URL);
+mongoose
+  .connect(process.env.MONGOOSE_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    
-}).then(() => {
+  })
+  .then(() => {
     console.log("Connected With Mongodb");
-}).catch((error) => {
+  })
+  .catch((error) => {
     console.log(error);
-})
+  });
