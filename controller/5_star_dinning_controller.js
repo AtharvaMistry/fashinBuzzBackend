@@ -19,6 +19,7 @@ const create_five_star_dining = async (req, res) => {
         Message,
         Interest
     })
+    
     try {
         const data = await obj.save()
         res.status(201).send({ Message: '5 Star Dinning Created Successfully', data })
